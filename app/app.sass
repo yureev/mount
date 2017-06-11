@@ -1,5 +1,9 @@
-@import url('./view1/view1.css')
-@import url('./view2/view2.css')
+@import url('./modules/about/about.css')
+@import url('./modules/contacts/contacts.css')
+@import url('./modules/home/home.css')
+@import url('./modules/login/login.css')
+@import url('./modules/lorem/lorem.css')
+
 
 @mixin clearfix()
   &:before, &:after
@@ -9,15 +13,32 @@
   &:after
     clear: both
 
+@mixin placeholder($color: #000000)
+  &::-webkit-input-placeholder
+    color: $color
+  &:-moz-placeholder
+    color: $color
+  &::-moz-placeholder
+    color: $color
+  &:-ms-input-placeholder
+    color: $color
+
+@mixin border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+
+
+
 html
   width: 100%
   height: 100%
 
 body
-  //width: 1920px
   height: 100%
   background-color: transparent
-  //margin: 210px auto 270px
 
 ul
   padding: 0
@@ -32,6 +53,7 @@ p
 
 a
   text-decoration: none
+  cursor: pointer
 
 *
   box-sizing: border-box
@@ -40,40 +62,115 @@ a
 body
   background: fixed url("./assets/image/background.png") no-repeat
   background-size: cover
+  color: #ffffff
 
 .wrapper
   min-height: 100%
   overflow: hidden
   position: relative
   padding: 100px
+  color: #ffffff
 
 
   .header
     @include clearfix()
-    //background: bisque
-
-    .header__logo
-      float: left
+    width: 100%
+    height: 80px
 
     .header__menu
       float: left
+      width: 10%
+      min-width: 40px
+      .menu
+        padding: 0
+        cursor: pointer
+        position: relative
+        .menu_line
+          width: 20px
+          height: 2px
+          border: 1px solid #ffffff
+          margin-bottom: 2px
+        .menu__container
+          position: absolute
+          top: 10px
+          width: 200px
+          .menu__list
+            background: rgba(#fff, .2)
+            padding: 10px
+            @include border-radius(5px)
+            .menu__item
+              height: 20px
+              margin-bottom: 20px
+              .menu__item_link
+                cursor: pointer
+                color: #ffffff
+                text-decoration: none
+                text-transform: uppercase
+            .menu__item:last-child
+              margin-bottom: 0
+
+
+
+    .header__nav
+      float: left
+      width: 70%
+      .nav__list
+        height: 40px
+        width: 100%
+        display: flex
+
+        &:after
+          content: ''
+          display: inline-block
+          height: 0
+          margin-right: 20px
+        .nav__item
+          display: inline-block
+          margin: auto
+          text-align: center
+          .nav__item_link
+            cursor: pointer
+            color: #ffffff
+            text-decoration: none
+            text-transform: uppercase
+
 
     .header__search
       float: left
+      width: 20%
+      min-width: 200px
 
       .search
         position: relative
 
         .search__input
+          width: 100%
           padding: 10px 40px 10px 35px
           background: rgba(#fff, .2)
           border: 0 none
-          border-radius: 50px
+          color: #ffffff
+          outline: none
+          @include border-radius(50px)
+          @include placeholder(#ffffff)
+
+        .search__submit
+          background: url("./assets/image/search.png") 0 0 no-repeat
+          width: 16px
+          height: 16px
+          display: block
+          border: none
+          position: absolute
+          right: 18px
+          top: 50%
+          margin-top: -8px
+          padding: 0
+          outline: none
 
 
+  .empty
+    height: 90px
 
 .footer
-  background-color: #000000
   height: 90px
   margin-top: -90px
   position: relative
@@ -81,7 +178,7 @@ body
   color: #ffffff
   font-family: Georgia, sans-serif
   text-align: center
+  padding: 40px
   .copyright_link
     color: #ffffff
-    text-decoration: underline
 

@@ -37,11 +37,32 @@
   <div class="wrapper">
 
     <header class="header">
-      <div class="header__logo">
-        <img src="" alt="Logo" class="header__logo_img">
-      </div>
       <div class="header__menu">
-
+        <menu class="menu" ng-click="menu = !menu">
+          <div class="menu_line"></div>
+          <div class="menu_line"></div>
+          <div class="menu_line"></div>
+          <div class="menu__container" ng-if="menu">
+            <ul class="menu__list">
+              <li class="menu__item"><a href="#!/home" class="menu__item_link">Home</a></li>
+              <li class="menu__item"><a href="#!/about" class="menu__item_link">About</a></li>
+              <li class="menu__item"><a href="#!/contacts" class="menu__item_link">Contacts</a></li>
+              <li class="menu__item"><a href="#!/lorem" class="menu__item_link">Lorem</a></li>
+              <li class="menu__item"><a href="#!/login" class="menu__item_link">Login</a></li>
+            </ul>
+          </div>
+        </menu>
+      </div>
+      <div class="header__nav">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#!/home" class="nav__item_link">Home</a></li>
+            <li class="nav__item"><a href="#!/about" class="nav__item_link">About</a></li>
+            <li class="nav__item"><a href="#!/contacts" class="nav__item_link">Contacts</a></li>
+            <li class="nav__item"><a href="#!/lorem" class="nav__item_link">Lorem</a></li>
+            <li class="nav__item"><a href="#!/login" class="nav__item_link">Login</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="header__search">
         <div class="search">
@@ -57,11 +78,12 @@
     </header>
 
 
-    <ul class="menu">
-      <li><a href="#!/view1">view1</a></li>
-      <li><a href="#!/view2">view2</a></li>
-    </ul>
+    <!--<ul class="menu">-->
+      <!--<li><a href="#!/view1">view1</a></li>-->
+      <!--<li><a href="#!/view2">view2</a></li>-->
+    <!--</ul>-->
     <div ng-view></div>
+    <div class="empty"></div>
   </div>
   <footer class="footer">
     <a href="#" class="copyright_link">Copyright © 2017 @yureev</a>
@@ -73,8 +95,11 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
+  <script src="modules/home/home.js"></script>
+  <script src="modules/about/about.js"></script>
+  <script src="modules/contacts/contacts.js"></script>
+  <script src="modules/lorem/lorem.js"></script>
+  <script src="modules/login/login.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
