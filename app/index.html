@@ -11,9 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="app.css">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
 
   <!-- 1. Link to jQuery (1.8 or later), -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
@@ -42,7 +44,7 @@
           <div class="menu_line"></div>
           <div class="menu_line"></div>
           <div class="menu_line"></div>
-          <div class="menu__container" ng-if="menu">
+          <div class="menu__container" ng-show="menu">
             <ul class="menu__list">
               <li class="menu__item"><a href="#!/home" class="menu__item_link">Home</a></li>
               <li class="menu__item"><a href="#!/about" class="menu__item_link">About</a></li>
@@ -100,6 +102,7 @@
   <script src="modules/contacts/contacts.js"></script>
   <script src="modules/lorem/lorem.js"></script>
   <script src="modules/login/login.js"></script>
+  <script src="modules/registration/reg.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

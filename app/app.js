@@ -7,7 +7,8 @@ angular.module('myApp', [
   'myApp.about',
   'myApp.contacts',
   'myApp.lorem',
-  'myApp.login'
+  'myApp.login',
+  'myApp.reg'
 
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

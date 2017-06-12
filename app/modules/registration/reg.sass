@@ -22,28 +22,22 @@
   -ms-border-radius: $radius
   border-radius: $radius
 
-.login
+.reg
   width: 400px
   margin: 0 auto
   text-align: right
-  .login__name_input, .login__password_input
-    width: 100%
-    padding: 10px 40px 10px 35px
-    background: rgba(#fff, .2)
-    border: 0 none
-    color: #ffffff
-    outline: none
-    @include border-radius(50px)
-    @include placeholder(#ffffff)
-
-  .login__name_link, .login__password_link
-    cursor: pointer
-    color: #ffffff
-    text-decoration: none
-
-  .login__submit
-    margin-top: 20px
-    .login__submit_button
+  .reg__item
+    margin-bottom: 20px
+    .reg__item_input
+      width: 100%
+      padding: 10px 40px 10px 35px
+      background: rgba(#fff, .2)
+      border: 0 none
+      color: #ffffff
+      outline: none
+      @include border-radius(50px)
+      @include placeholder(#ffffff)
+    .reg__item__submit_button
       background: rgba(#fff, .8)
       color: black
       @include border-radius(5px)
