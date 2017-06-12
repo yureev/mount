@@ -1,6 +1,5 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
   'myApp.home',
@@ -8,7 +7,8 @@ angular.module('myApp', [
   'myApp.contacts',
   'myApp.lorem',
   'myApp.login',
-  'myApp.reg'
+  'myApp.reg',
+  'myApp.data'
 
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
@@ -16,19 +16,5 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);
-
-// .controller('AppCtrl', ['$scope', '$window', function ($scope, $window) {
-//   $scope.menu = true;
-//   console.log(menu);
-//
-//   angular.element(document).on('click', function (event) {
-//     $scope.menu = false;
-//   });
-//
-//   angular.element('#1').on('click', function (event) {
-//     $scope.menu = true;
-//   });
-//
-// }]);
 
 

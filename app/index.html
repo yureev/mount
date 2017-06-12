@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Mount</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -40,11 +40,11 @@
 
     <header class="header">
       <div class="header__menu">
-        <menu class="menu" ng-click="menu = !menu">
+        <menu class="menu">
           <div class="menu_line"></div>
           <div class="menu_line"></div>
           <div class="menu_line"></div>
-          <div class="menu__container" ng-show="menu">
+          <div class="menu__container">
             <ul class="menu__list">
               <li class="menu__item"><a href="#!/home" class="menu__item_link">Home</a></li>
               <li class="menu__item"><a href="#!/about" class="menu__item_link">About</a></li>
@@ -76,14 +76,7 @@
         </div>
 
       </div>
-
     </header>
-
-
-    <!--<ul class="menu">-->
-      <!--<li><a href="#!/view1">view1</a></li>-->
-      <!--<li><a href="#!/view2">view2</a></li>-->
-    <!--</ul>-->
     <div ng-view></div>
     <div class="empty"></div>
   </div>
@@ -103,6 +96,7 @@
   <script src="modules/lorem/lorem.js"></script>
   <script src="modules/login/login.js"></script>
   <script src="modules/registration/reg.js"></script>
+  <script src="modules/data/data.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

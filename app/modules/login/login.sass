@@ -26,6 +26,9 @@
   width: 400px
   margin: 0 auto
   text-align: right
+
+  .login__name
+    margin-bottom: 20px
   .login__name_input, .login__password_input
     width: 100%
     padding: 10px 40px 10px 35px
@@ -36,7 +39,7 @@
     @include border-radius(50px)
     @include placeholder(#ffffff)
 
-  .login__name_link, .login__password_link
+  .login__name_link, .login__password_link, .login__submit__link
     cursor: pointer
     color: #ffffff
     text-decoration: none
@@ -44,8 +47,11 @@
   .login__submit
     margin-top: 20px
     .login__submit_button
-      background: rgba(#fff, .8)
-      color: black
-      @include border-radius(5px)
+      background-color: #da7074
+      @include border-radius(50px)
       height: 40px
       width: 110px
+      outline: none
+
+    .login__submit_button:disabled
+      opacity: .5

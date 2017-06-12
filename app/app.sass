@@ -4,6 +4,7 @@
 @import url('./modules/login/login.css')
 @import url('./modules/lorem/lorem.css')
 @import url('./modules/registration/reg.css')
+@import url('./modules/data/data.css')
 
 
 @mixin clearfix()
@@ -77,6 +78,7 @@ body
   .header
     @include clearfix()
     width: 100%
+    margin-bottom: 50px
 
     .header__menu
       float: left
@@ -92,11 +94,14 @@ body
           margin-bottom: 2px
           cursor: pointer
         .menu__container
+          display: none
           position: absolute
           top: 10px
           width: 200px
           .menu__list
-            background: rgba(#fff, .8)
+            background-color: #da7074
+            opacity: .8
+            //background: rgba(#fff, .8)
             padding: 10px
             @include border-radius(5px)
             .menu__item
@@ -104,11 +109,14 @@ body
               margin-bottom: 20px
               .menu__item_link
                 cursor: pointer
-                color: #000000
+                color: #ffffff
                 text-decoration: none
                 text-transform: uppercase
             .menu__item:last-child
               margin-bottom: 0
+      .menu:hover
+        .menu__container
+          display: block
 
     .header__nav
       float: left

@@ -1,14 +1,19 @@
-<form action="" name="loginForm" class="login" autocomplete="on" method="post">
+<form name="loginForm" class="login" autocomplete="on" role="form" method="post" ng-controller="LoginCtrl">
     <div class="login__name">
-        <input type="text" name="login" class="login__name_input" placeholder="Login" tabindex="1" required>
+        <input type="text" name="login" class="login__name_input" ng-blur="validName()" ng-model="loginFormInfo.Name" placeholder="Login" tabindex="1" required>
+        <span ng-show="nameRequired">{{nameRequired}}</span><br>
         <a href="#" class="login__name_link">Forgot?</a>
     </div>
     <div class="login__password">
-        <input type="password" name="pass" class="login__password_input" placeholder="Password"
+        <input type="password" name="pass" class="login__password_input" ng-blur="validPass()" ng-model="loginFormInfo.Pass" placeholder="Password"
                maxlength="25" tabindex="2" required>
+        <span ng-show="passwordRequired">{{passwordRequired}}</span><br>
         <a href="#!/reg" class="login__password_link">Registration</a>
     </div>
     <div class="login__submit">
-        <button type="submit" class="login__submit_button" tabindex="3">Enter</button>
+        <a href="#!/data" class="login__submit__link">
+            <button type="submit" class="login__submit_button" ng-disabled="loginForm.$invalid" tabindex="3">Enter</button>
+        </a>
+
     </div>
 </form>

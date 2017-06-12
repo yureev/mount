@@ -32,14 +32,29 @@
       width: 100%
       padding: 10px 40px 10px 35px
       background: rgba(#fff, .2)
-      border: 0 none
+      border: 1px solid #ffffff
       color: #ffffff
       outline: none
       @include border-radius(50px)
       @include placeholder(#ffffff)
+
+    .reg__item_input:valid
+      border: 1px solid blue
+      box-shadow: 0 0 10px rgba(0,0,0,0.5)
+
+    .reg__item_input:invalid
+      border: 1px solid red
+      box-shadow: 0 0 10px rgba(0,0,0,0.5)
+
     .reg__item__submit_button
-      background: rgba(#fff, .8)
-      color: black
-      @include border-radius(5px)
+      background-color: #da7074
+      @include border-radius(50px)
       height: 40px
       width: 110px
+      outline: none
+
+form input:valid
+  border: 1px solid blue
+
+form input:invalid
+  border: 1px solid red

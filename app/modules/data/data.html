@@ -1,0 +1,34 @@
+<div class="data">
+    <div class="data__login" ng-show="loginFormInfo">
+        <h2 class="login_header">DataLogin</h2>
+        <ul class="login__list">
+            <li class="login__item">
+                <span class="login__item_text">Login:</span><span class="login__item_value">{{loginFormInfo.Name}}</span>
+            </li>
+            <li class="login__item">
+                <span class="login__item_text">Password:</span><span class="login__item_value">{{loginFormInfo.Pass}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="data__reg" ng-show="regFormInfo">
+        <h2 class="reg_header">DataRegistration</h2>
+        <ul class="reg__list">
+            <li class="reg__item">
+                <span class="reg__item_text">Login:</span><span class="reg__item_value">{{regFormInfo.Login}}</span>
+            </li>
+            <li class="reg__item">
+                <span class="reg__item_text">Name:</span><span class="reg__item_value">{{regFormInfo.Name}}</span>
+            </li>
+            <li class="reg__item">
+                <span class="reg__item_text">Surname:</span><span class="reg__item_value">{{regFormInfo.Surname}}</span>
+            </li>
+            <li class="reg__item">
+                <span class="reg__item_text">Mail:</span><span class="reg__item_value">{{regFormInfo.Mail}}</span>
+            </li>
+            <li class="reg__item">
+                <span class="reg__item_text">Password:</span><span class="reg__item_value">{{regFormInfo.Pass}}</span>
+            </li>
+        </ul>
+    </div>
+
+</div>

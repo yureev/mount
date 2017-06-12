@@ -9,6 +9,6 @@ angular.module('myApp.reg', ['ngRoute'])
         });
     }])
 
-    .controller('RegCtrl', [function() {
-
+    .controller('RegCtrl', ['$rootScope', function($rootScope) {
+        $rootScope.regFormInfo = {};
     }]);

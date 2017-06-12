@@ -1,31 +1,30 @@
-<form action="" name="regForm" class="reg" autocomplete="on" method="post">
+<form name="regForm" class="reg" autocomplete="on" method="post">
     <ul class="reg__list">
         <li class="reg__item">
-            <input type="text" name="login" class="reg__item_input" placeholder="Login" tabindex="1" required>
+            <input type="text" name="login" class="reg__item_input" ng-model="regFormInfo.Login" placeholder="Login" tabindex="1" required>
             <div class="reg__item_text">Login</div>
         </li>
         <li class="reg__item">
-            <input type="text" name="name" class="reg__item_input" placeholder="Name" tabindex="2" required>
+            <input type="text" name="name" class="reg__item_input"  ng-model="regFormInfo.Name"placeholder="Name" tabindex="2" required>
             <div class="reg__item_text">Name</div>
         </li>
         <li class="reg__item">
-            <input type="text" name="surname" class="reg__item_input" placeholder="Surname" tabindex="3" required>
+            <input type="text" name="surname" class="reg__item_input"ng-model="regFormInfo.Surname"  placeholder="Surname" tabindex="3" required>
             <div class="reg__item_text">Surname</div>
         </li>
         <li class="reg__item">
-            <input type="text" name="mail" class="reg__item_input" placeholder="name@mail.com" tabindex="4" required>
-            <div class="reg__item_text">e-mail</div>
+            <input type="email" name="mail" class="reg__item_input" ng-model="regFormInfo.Mail" placeholder="name@mail.com" tabindex="4" required>
+            <div class="reg__item_text">E-mail</div>
         </li>
         <li class="reg__item">
-            <input type="password" name="firstPass" class="reg__item_input" placeholder="Password" maxlength="25" tabindex="5" required>
+            <input type="password" name="pass" class="reg__item_input" ng-model="regFormInfo.Pass" placeholder="Password" maxlength="25" tabindex="5" required>
             <div class="reg__item_text">Password</div>
         </li>
         <li class="reg__item">
-            <input type="password" name="secondPass" class="reg__item_input" placeholder="Password" maxlength="25" tabindex="6" required>
-            <div class="reg__item_text">Password</div>
-        </li>
-        <li class="reg__item">
-            <button type="submit" class="reg__item__submit_button" tabindex="7">Enter</button>
+            <a href="#!/data" class="reg__item__submit__link">
+                <button type="submit" class="reg__item__submit_button" tabindex="6">Enter</button>
+            </a>
+
         </li>
     </ul>
 </form>

@@ -9,6 +9,20 @@ angular.module('myApp.login', ['ngRoute'])
         });
     }])
 
-    .controller('LoginCtrl', [function() {
+    .controller('LoginCtrl', ['$rootScope', '$scope', function($rootScope, $scope) {
+        $rootScope.loginFormInfo = {};
+        $scope.validName = function() {
+            $scope.nameRequired = '';
 
+            if (!$scope.loginFormInfo.Name) {
+                $scope.nameRequired = 'Name Required';
+            }
+        };
+        $scope.validPass = function() {
+            $scope.passwordRequired = '';
+
+            if (!$scope.loginFormInfo.Pass) {
+                $scope.passwordRequired = 'Password Required';
+            }
+        };
     }]);
