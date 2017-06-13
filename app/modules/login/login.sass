@@ -2,7 +2,6 @@
   &:before, &:after
     content: ""
     display: table
-
   &:after
     clear: both
 
@@ -27,31 +26,42 @@
   margin: 0 auto
   text-align: right
 
-  .login__name
+  .login__item
     margin-bottom: 20px
-  .login__name_input, .login__password_input
+  .login__item_input
     width: 100%
     padding: 10px 40px 10px 35px
     background: rgba(#fff, .2)
-    border: 0 none
+    border: 1px solid #ffffff
     color: #ffffff
     outline: none
     @include border-radius(50px)
     @include placeholder(#ffffff)
 
-  .login__name_link, .login__password_link, .login__submit__link
+  .login__item_input:focus
+    border: 1px solid blue
+    box-shadow: 0 0 10px rgba(0,0,0,0.5)
+
+  .login__item_input_error
+    border: 1px solid red
+    box-shadow: 0 0 10px rgba(0,0,0,0.5)
+
+  .login__item__text_link
     cursor: pointer
     color: #ffffff
     text-decoration: none
 
-  .login__submit
-    margin-top: 20px
-    .login__submit_button
-      background-color: #da7074
-      @include border-radius(50px)
-      height: 40px
-      width: 110px
-      outline: none
+  .login__item_error
+    height: 20px
+    color: red
+    text-align: center
 
-    .login__submit_button:disabled
-      opacity: .5
+  .login__item__text_button
+    background-color: #da7074
+    @include border-radius(50px)
+    height: 40px
+    width: 110px
+    outline: none
+
+  .login__item__text_button:disabled
+    opacity: .5

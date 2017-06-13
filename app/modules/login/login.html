@@ -1,19 +1,26 @@
 <form name="loginForm" class="login" autocomplete="on" role="form" method="post" ng-controller="LoginCtrl">
-    <div class="login__name">
-        <input type="text" name="login" class="login__name_input" ng-blur="validName()" ng-model="loginFormInfo.Name" placeholder="Login" tabindex="1" required>
-        <span ng-show="nameRequired">{{nameRequired}}</span><br>
-        <a href="#" class="login__name_link">Forgot?</a>
-    </div>
-    <div class="login__password">
-        <input type="password" name="pass" class="login__password_input" ng-blur="validPass()" ng-model="loginFormInfo.Pass" placeholder="Password"
-               maxlength="25" tabindex="2" required>
-        <span ng-show="passwordRequired">{{passwordRequired}}</span><br>
-        <a href="#!/reg" class="login__password_link">Registration</a>
-    </div>
-    <div class="login__submit">
-        <a href="#!/data" class="login__submit__link">
-            <button type="submit" class="login__submit_button" ng-disabled="loginForm.$invalid" tabindex="3">Enter</button>
-        </a>
-
-    </div>
+    <ul class="login__list">
+        <li class="login__item">
+            <input type="text" name="login" class="login__item_input" ng-class="{'login__item_input_error' : (loginForm.login.$invalid && loginForm.login.$touched)}" ng-blur="validLogin()" ng-model="loginFormInfo.Login" placeholder="Login" tabindex="1" required>
+            <div class="login__item_error">
+                <span ng-show="(loginForm.login.$invalid && loginForm.login.$touched)">{{loginRequired}}</span>
+            </div>
+            <div class="login__item_text"><a href="#" class="login__item__text_link">Forgot?</a></div>
+        </li>
+        <li class="login__item">
+            <input type="text" name="pass" class="login__item_input" ng-class="{'login__item_input_error' : (loginForm.pass.$invalid && loginForm.pass.$touched)}" ng-blur="validPass()" ng-model="loginFormInfo.Pass" placeholder="Password"
+                   maxlength="25" tabindex="2" required>
+            <div class="login__item_error">
+                <span ng-show="(loginForm.pass.$invalid && loginForm.pass.$touched)">{{passwordRequired}}</span>
+            </div>
+            <div class="login__item__text"><a href="#!/reg" ng-click="validAuth('reg')" class="login__item__text_link">Registration</a></div>
+        </li>
+        <li class="login__item">
+            <div class="login__item__text">
+                <a href="#!/data" class="login__item__text_link">
+                    <button type="submit" class="login__item__text_button" ng-click="validAuth('login')" ng-disabled="loginForm.$invalid" tabindex="3">Enter</button>
+                </a>
+            </div>
+        </li>
+    </ul>
 </form>

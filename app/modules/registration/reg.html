@@ -1,28 +1,43 @@
 <form name="regForm" class="reg" autocomplete="on" method="post">
     <ul class="reg__list">
         <li class="reg__item">
-            <input type="text" name="login" class="reg__item_input" ng-model="regFormInfo.Login" placeholder="Login" tabindex="1" required>
+            <input type="text" name="login" class="reg__item_input" ng-class="{'reg__item_input_error' : (regForm.login.$invalid && regForm.login.$touched)}" ng-blur="validLogin()" ng-model="regFormInfo.Login" placeholder="Login" tabindex="1" required>
+            <div class="reg__item_error">
+                <span ng-show="(regForm.login.$invalid && regForm.login.$touched)">{{loginRequired}}</span>
+            </div>
             <div class="reg__item_text">Login</div>
         </li>
         <li class="reg__item">
-            <input type="text" name="name" class="reg__item_input"  ng-model="regFormInfo.Name"placeholder="Name" tabindex="2" required>
+            <input type="text" name="name" class="reg__item_input"  ng-class="{'reg__item_input_error' : (regForm.name.$invalid && regForm.name.$touched)}" ng-blur="validName()" ng-model="regFormInfo.Name" placeholder="Name" tabindex="2" required>
+            <div class="reg__item_error">
+                <span ng-show="(regForm.name.$invalid && regForm.name.$touched)">{{nameRequired}}</span>
+            </div>
             <div class="reg__item_text">Name</div>
         </li>
         <li class="reg__item">
-            <input type="text" name="surname" class="reg__item_input"ng-model="regFormInfo.Surname"  placeholder="Surname" tabindex="3" required>
+            <input type="text" name="surname" class="reg__item_input" ng-class="{'reg__item_input_error' : (regForm.surname.$invalid && regForm.surname.$touched)}" ng-blur="validSurname()" ng-model="regFormInfo.Surname" placeholder="Surname" tabindex="3" required>
+            <div class="reg__item_error">
+                <span ng-show="(regForm.surname.$invalid && regForm.surname.$touched)">{{surnameRequired}}</span>
+            </div>
             <div class="reg__item_text">Surname</div>
         </li>
         <li class="reg__item">
-            <input type="email" name="mail" class="reg__item_input" ng-model="regFormInfo.Mail" placeholder="name@mail.com" tabindex="4" required>
+            <input type="email" name="mail" class="reg__item_input" ng-class="{'reg__item_input_error' : (regForm.mail.$invalid && regForm.mail.$touched)}" ng-blur="validMail()" ng-model="regFormInfo.Mail" placeholder="name@mail.com" tabindex="4" required>
+            <div class="reg__item_error">
+                <span ng-show="(regForm.mail.$invalid && regForm.mail.$touched)">{{mailRequired}}</span>
+            </div>
             <div class="reg__item_text">E-mail</div>
         </li>
         <li class="reg__item">
-            <input type="password" name="pass" class="reg__item_input" ng-model="regFormInfo.Pass" placeholder="Password" maxlength="25" tabindex="5" required>
+            <input type="password" name="pass" class="reg__item_input" ng-class="{'reg__item_input_error' : (regForm.pass.$invalid && regForm.pass.$touched)}" ng-blur="validPass()" ng-model="regFormInfo.Pass" placeholder="Password" maxlength="25" tabindex="5" required>
+            <div class="reg__item_error">
+                <span ng-show="(regForm.pass.$invalid && regForm.pass.$touched)">{{passwordRequired}}</span>
+            </div>
             <div class="reg__item_text">Password</div>
         </li>
         <li class="reg__item">
             <a href="#!/data" class="reg__item__submit__link">
-                <button type="submit" class="reg__item__submit_button" tabindex="6">Enter</button>
+                <button type="submit" class="reg__item__submit_button" ng-disabled="regForm.$invalid" tabindex="6">Enter</button>
             </a>
 
         </li>

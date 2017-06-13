@@ -1,16 +1,16 @@
 <div class="data">
-    <div class="data__login" ng-show="loginFormInfo">
+    <div class="data__login" ng-show="loginFormInfo.Login || loginFormInfo.Pass">
         <h2 class="login_header">DataLogin</h2>
         <ul class="login__list">
             <li class="login__item">
-                <span class="login__item_text">Login:</span><span class="login__item_value">{{loginFormInfo.Name}}</span>
+                <span class="login__item_text">Login:</span><span class="login__item_value">{{loginFormInfo.Login}}</span>
             </li>
             <li class="login__item">
                 <span class="login__item_text">Password:</span><span class="login__item_value">{{loginFormInfo.Pass}}</span>
             </li>
         </ul>
     </div>
-    <div class="data__reg" ng-show="regFormInfo">
+    <div class="data__reg" ng-show="regFormInfo.Login || regFormInfo.Name || regFormInfo.Surname || regFormInfo.Mail || regFormInfo.Pass">
         <h2 class="reg_header">DataRegistration</h2>
         <ul class="reg__list">
             <li class="reg__item">

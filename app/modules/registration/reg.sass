@@ -38,13 +38,18 @@
       @include border-radius(50px)
       @include placeholder(#ffffff)
 
-    .reg__item_input:valid
+    .reg__item_input:focus
       border: 1px solid blue
       box-shadow: 0 0 10px rgba(0,0,0,0.5)
 
-    .reg__item_input:invalid
+    .reg__item_input_error
       border: 1px solid red
       box-shadow: 0 0 10px rgba(0,0,0,0.5)
+
+    .reg__item_error
+      height: 20px
+      color: red
+      text-align: center
 
     .reg__item__submit_button
       background-color: #da7074
@@ -53,8 +58,10 @@
       width: 110px
       outline: none
 
-form input:valid
-  border: 1px solid blue
+    .reg__item__submit_button:disabled
+      opacity: .5
 
-form input:invalid
-  border: 1px solid red
+    .reg__item__submit__link
+      cursor: pointer
+      color: #ffffff
+      text-decoration: none

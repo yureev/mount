@@ -9,6 +9,41 @@ angular.module('myApp.reg', ['ngRoute'])
         });
     }])
 
-    .controller('RegCtrl', ['$rootScope', function($rootScope) {
+    .controller('RegCtrl', ['$rootScope', '$scope', function($rootScope, $scope) {
         $rootScope.regFormInfo = {};
+        $scope.validLogin = function() {
+            $scope.loginRequired = '';
+
+            if (!$scope.regFormInfo.Login) {
+                $scope.loginRequired = 'Login Required';
+            }
+        };
+        $scope.validName = function() {
+            $scope.nameRequired = '';
+
+            if (!$scope.regFormInfo.Name) {
+                $scope.nameRequired = 'Name Required';
+            }
+        };
+        $scope.validSurname = function() {
+            $scope.surnameRequired = '';
+
+            if (!$scope.regFormInfo.Surname) {
+                $scope.surnameRequired = 'Surname Required';
+            }
+        };
+        $scope.validMail = function() {
+            $scope.mailRequired = '';
+
+            if (!$scope.regFormInfo.Mail) {
+                $scope.mailRequired = 'Mail Required';
+            }
+        };
+        $scope.validPass = function() {
+            $scope.passwordRequired = '';
+
+            if (!$scope.regFormInfo.Pass) {
+                $scope.passwordRequired = 'Password Required';
+            }
+        };
     }]);
